@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node build/app.js"
+    "start": "node build/app.js",
+    "dev": "tsx watch src/app.ts",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -18,8 +20,7 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^22.20.3",
-    "typescript": "^7.0.2",
-    "build": "tsc",
-    "start": "node build/app.js"
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
