@@ -1,13 +1,18 @@
 import express, { Application, Request, Response } from "express";
+import carRoutes from './routes/cars';
 
 const PORT = process.env.PORT || 4000;
 
 const app: Application = express();
 
+app.use('/api/v1/cars', carRoutes);
+
 app.use((req, _res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     next();
 });
+
+app.use('/api/v1/cars', carRoutes);
 
 app.get("/ping", async (_req: Request, res: Response) => {
     res.json({
