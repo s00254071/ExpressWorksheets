@@ -1,4 +1,4 @@
-import { CarModel, ICar } from '../model/Cars'
+import { CarModel, ICar } from '../model/cars'
 import { HydratedDocument } from 'mongoose';
 
 export class CarService {
