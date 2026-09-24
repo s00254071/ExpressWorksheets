@@ -22,12 +22,6 @@ app.get("/ping", async (_req: Request, res: Response) => {
     });
 });
 
-app.get('/bananas', async (_req: Request, res: Response) => {
-    res.json({
-        message: "this is bananas",
-    });
-});
-
 const startServer = async () => {
     await connectDB();
     app.listen(PORT, () => {
