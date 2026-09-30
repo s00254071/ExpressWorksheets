@@ -1,12 +1,20 @@
 @endpoint = http://localhost:3000/api/v1/cars
 
 ###
+###
+###
+###
+###
+###
+###
 POST {{endpoint}} HTTP/1.1
 content-type: application/json
+x-api-key: blahblah
 
 {
     "make": "Toyota",
-    "model": "Corolla"
+    "model": "Corolla",
+    "year": "2020"
 }
 ###
 GET  {{endpoint}} HTTP/3.0
