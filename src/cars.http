@@ -1,0 +1,60 @@
+@endpoint = http://localhost:3000/api/v1/cars
+
+###
+###
+###
+###
+###
+###
+###
+POST {{endpoint}} HTTP/1.1
+content-type: application/json
+x-api-key: blahblah
+
+{
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": "2020"
+}
+###
+GET  {{endpoint}} HTTP/3.0
+content-type: application/json
+
+###
+GET  {{endpoint}}/sillycarID HTTP/3.0
+
+content-type: application/json
+
+###
+
+//DELETE  {{endpoint}}/sillycarID HTTP/3.0
+//content-type: application/json
+
+DELETE  {{endpoint}}/6ab5471e88da22f091ec746e HTTP/3.0
+content-type: application/json
+
+###
+
+PUT  {{endpoint}}/sillycarID HTTP/3.0
+content-type: application/json
+
+###
+# @name postACar
+POST {{endpoint}} HTTP/1.1
+content-type: application/json
+
+{ "make" : "make2",
+"model" : "model2"
+  }
+
+###
+@newCar = {{postACar.response.body._id}}
+
+###
+GET  {{endpoint}}/{{newCar}} HTTP/3.0
+content-type: application/json
+
+###
+GET http://localhost:3000/api/v1/cars HTTP/1.1
+content-type: application/json
+x-api-key: blahblah
