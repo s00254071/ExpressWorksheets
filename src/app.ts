@@ -5,6 +5,7 @@ import carRoutes from './routes/cars';
 import {authenticateKey} from './middleware/auth.middleware';
 import { requestLogger } from './middleware/logger.middleware';
 import { swaggerSpec } from './config/swagger';
+import { errorHandler } from './middleware/error.middleware';
 
 export const app: Application = express();
 
@@ -37,3 +38,5 @@ app.get("/pung", async (_req : Request, res: Response) => {
     console.log("Received request to /pung");
     throw new Error("Simulated error in /pung route");
 });
+
+app.use(errorHandler);
