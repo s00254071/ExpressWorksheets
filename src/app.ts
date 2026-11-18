@@ -6,6 +6,7 @@ import {authenticateKey} from './middleware/auth.middleware';
 import { requestLogger } from './middleware/logger.middleware';
 import { swaggerSpec } from './config/swagger';
 import { errorHandler } from './middleware/error.middleware';
+import authRoutes from './routes/auth';
 
 export const app: Application = express();
 
@@ -22,6 +23,8 @@ swaggerUi.setup(swaggerSpec)
 );
 
 app.use('/api/v1/cars', authenticateKey, carRoutes);
+
+app.use('/api/v1/auth', authRoutes);
 
 app.get("/ping", async (_req: Request, res: Response) => {
     res.json({
