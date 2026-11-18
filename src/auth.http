@@ -8,6 +8,7 @@ content-type: application/json
     "email": "una2@example.com",
     "password": "pasadfdfdfsdf"
 }
+
 ###
 
 # @name login
@@ -22,6 +23,11 @@ content-type: application/json
 ###
 
 @accessToken = {{login.response.body.token}}
+
+DELETE {{endpoint}}/cars/66f1428fd79bf0c5ae9988 HTTP/1.1
+content-type: application/json
+x-api-key: blahblah
+Authorization: Bearer {{accessToken}}
 
 ###
 
