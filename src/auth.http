@@ -18,3 +18,12 @@ content-type: application/json
     "email": "una2@example.com",
     "password": "pasadfdfdfsdf"
 }
+
+###
+
+@accessToken = {{login.response.body.token}}
+
+###
+
+GET {{endpoint}}/auth/me HTTP/1.1
+Authorization: Bearer {{accessToken}}
